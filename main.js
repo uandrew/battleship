@@ -1,7 +1,7 @@
 //Реалізація представлення, вьюшка
 var view = {
   // метод получає строкове повідомлення і виводить його в області повідомлення
-    dispayMessage: function(msg) {
+    displayMessage: function(msg) {
       var messageArea = document.getElementById("messageArea");
       messageArea.innerHTML = msg;
     },
@@ -25,7 +25,7 @@ var view = {
     ships: [ // фіксовані позиції замінили на нульові
       {locations: [0, 0, 0], hits:["","",""]},
       {locations: [0, 0, 0], hits: ["","",""]},
-      {locations: [0, 0, 0],hits:["","",""]}
+      {locations: [0, 0, 0], hits:["","",""]}
     ],
     fire: function(guess) {
       for (var i = 0; i < this.numShips; i++ ) {  //всі кораблі перебираємо
