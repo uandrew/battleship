@@ -33,7 +33,7 @@ var view = {
         //var locations = ship.locations; //отримуєм масив кліток, які займає корабель
         var index = ship.locations.indexOf(guess); //щоб не писати ще один цикл можна перевіряти чи є в масиві координат координати пострілу юзера
         if (ship.hits[index] === "hit") { // перевіряєм чи повторно не було попадання
-          view.dispayMessage("Упс, ти вже попав по цих координатах!");
+          view.displayMessage("Упс, ти вже попав по цих координатах!");
           return true;
         }else if (index >= 0) { //повертає -1 якщо відсутнє значення
           ship.hits[index] = "hit"; // той самий індекс має відмічатися в масиві який зберігає попадання і ми міняємо масив
@@ -42,7 +42,7 @@ var view = {
          
           if (this.isSunk(ship)) {
             view.dispayMessage("Ти потопив мій корабель!");
-            this.shipsSunk++;  //лічильник потоплених кораблів в моделі збільшується
+            this.shipSunk++;  //лічильник потоплених кораблів в моделі збільшується
           }
           return true;
         }
@@ -119,7 +119,7 @@ var view = {
       if (location) {
         this.guesses++; // якщо дані введені правильно лічильник збільшується
         var hit = model.fire(location);
-        if (hit && model.shipsSunk === model.numShips) {
+        if (hit && model.shipSunk === model.numShips) {
           view.displayMessage("Ти потопив усі мої кораблі, за " + this.guesses + " спроб");
         }
       }
