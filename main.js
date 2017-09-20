@@ -41,7 +41,7 @@ var view = {
           view.displayMessage("ПОПАВ!");
          
           if (this.isSunk(ship)) {
-            view.dispayMessage("Ти потопив мій корабель!");
+            view.displayMessage("Ти потопив мій корабель!");
             this.shipSunk++;  //лічильник потоплених кораблів в моделі збільшується
           }
           return true;
